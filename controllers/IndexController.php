@@ -11,7 +11,7 @@ class IndexController extends Controller{
     public function actionIndex(){
        $model = new Test();
        $res = $model->find()->asArray()->one();
-       var_dump($res);die;
+
     }
 
     public function actionList(){
