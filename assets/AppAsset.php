@@ -19,29 +19,28 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
    /* public $css = [
-        'bootstrap/css/bootstrap.css',
-    ];
-    public $js = [
-        'jquery/jquery.min.js',
-        'bootstrap/js/bootstrap.js',
+        'css/site.css',
     ];*/
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-    ];
 
     public function registerAssetFiles($view)
     {
-        //加版本号，目的：使浏览器加载最新的js和css文件
-        $release = 20170707;
+        //添加版本号
+        $release = 20170822;
         $this->css = [
-            UrlService::buildUrl('bootstrap/css/bootstrap.css',['v'=>$release]),
-            UrlService::buildUrl('/css/app.css'),
+            UrlService::buildUrl("/bootstrap/css/bootstrap.css",['v'=>$release]),
+            UrlService::buildUrl("/css/app.css"),
         ];
         $this->js = [
-            UrlService::buildUrl( 'jquery/jquery.min.js'),
-            UrlService::buildUrl( 'bootstrap/js/bootstrap.js'),
+            UrlService::buildUrl( "/bootstrap/js/bootstrap.js"),
+            UrlService::buildUrl("/jquery/jquery.min.js"),
         ];
         parent::registerAssetFiles($view);
     }
+
+   /* public $js = [
+    ];
+    public $depends = [
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
+    ];*/
 }
