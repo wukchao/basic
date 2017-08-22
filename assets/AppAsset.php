@@ -7,6 +7,7 @@
 
 namespace app\assets;
 
+use app\service\UrlService;
 use yii\web\AssetBundle;
 
 /**
@@ -17,13 +18,29 @@ class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    public $css = [
+   /* public $css = [
         'css/site.css',
-    ];
-    public $js = [
+    ];*/
+
+    public function registerAssetFiles($view)
+    {
+        //添加版本号
+        $release = 20170822;
+        $this->css = [
+            UrlService::buildUrl("/bootstrap/css/bootstrap.css",['v'=>$release]),
+            UrlService::buildUrl("/css/app.css"),
+        ];
+        $this->js = [
+            UrlService::buildUrl( "/bootstrap/js/bootstrap.js"),
+            UrlService::buildUrl("/jquery/jquery.min.js"),
+        ];
+        parent::registerAssetFiles($view);
+    }
+
+   /* public $js = [
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-    ];
+    ];*/
 }

@@ -44,17 +44,17 @@ AppAsset::register($this);
 <!-- 菜单栏和内容区域1-->
 <div class="container-fluid">
     <div class="col-sm-2 col-md-2 col-lg-2 sidebar">
-        <ul class="nav nav-sidebar">
-            <li >权限演示页面</li>
-            <li ><a href="javascript:void(0)">测试页面一</a></li>
-            <li><a href="javascript:void(0)">测试页面二</a></li>
-            <li><a href="javascript:void(0)">测试页面三</a></li>
-            <li><a href="javascript:void(0)">测试页面四</a></li>
-            <li >系统设置</li>
-            <li><a href="javascript:void(0)">用户管理</a></li>
-            <li><a href="javascript:void(0)">角色管理</a></li>
-            <li><a href="javascript:void(0)">权限管理</a></li>
-        </ul>
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">权限演示页面 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">测试页面一</a></li>
+                <li><a href="#">测试页面二</a></li>
+                <li><a href="#">测试页面三</a></li>
+                <li><a href="#">测试页面四</a></li>
+                <li class="active"><a href="#">系统设置 <span class="sr-only">(current)</span></a></li>
+                <li><a href="javascript:void(0)">用户管理</a></li>
+                <li><a href="javascript:void(0)">角色管理</a></li>
+                <li><a href="javascript:void(0)">权限管理</a></li>
+            </ul>
     </div>
     <div class="col-sm-10  col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
         <?=$content;?>
