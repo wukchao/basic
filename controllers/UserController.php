@@ -5,7 +5,6 @@
  * Date: 2017/7/26
  * Time: 14:47
  */
-
 namespace app\controllers;
 
 
@@ -29,12 +28,13 @@ class UserController extends  BaseController
             return $this->render( UrlService::buildUrl('/') );
         }
         //cookie 保存用户的登陆状态,cookie比较容易篡改，所以cookie要加密 规则：user_auth_token +"#" +uid
-        $auth_token = md5($user_info['id'].$user_info['name'].$user_info['email'].$_SERVER['HTTP_USER_AGENT']);
+      /*  $auth_token = md5($user_info['id'].$user_info['name'].$user_info['email'].$_SERVER['HTTP_USER_AGENT']);
         $cookie = \Yii::$app->response->cookies;
         $cookie->add(new Cookie([
            "name" => "chaogege",
            "value" => $auth_token.$user_info['uid'],
-        ]));
+        ]));*/
+        $this->createLoginStatus($user_info);
         return $this->redirect(UrlService::buildUrl('/'));
     }
 
