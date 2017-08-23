@@ -1,27 +1,19 @@
 <?php
-<<<<<<< Updated upstream
 /**
  * Created by PhpStorm.
  * User: chao
  * Date: 2017/7/26
  * Time: 14:35
  */
-
-namespace app\controllers\common;
-
-=======
 namespace app\controllers\common;
 
 use app\models\User;
 use app\service\UrlService;
->>>>>>> Stashed changes
 use yii\web\Controller;
 use yii;
 
 class BaseController extends  Controller
 {
-<<<<<<< Updated upstream
-=======
     protected  $auth_cookie_name = "chaogege";
 
     protected  $allowAllAction = [
@@ -44,7 +36,6 @@ class BaseController extends  Controller
 
     }
 
->>>>>>> Stashed changes
     //同意获取POST参数
     public function post($key,$default=""){
         return yii::$app->request->post($key,$default);
@@ -66,8 +57,6 @@ class BaseController extends  Controller
         return Yii::$app->end();//终止请求直接返回
     }
 
-<<<<<<< Updated upstream
-=======
     //验证登录是否有效 返回true or false
     protected function checkLoginStatus(){
         $request = yii::$app->request;
@@ -113,5 +102,4 @@ class BaseController extends  Controller
         return md5($uid.$name,$email,$user_agent);
     }
 
->>>>>>> Stashed changes
 }
